@@ -1,0 +1,84 @@
+/*
+
+https://colorhunt.co/palette/179946 
+#4d3e3e - brown
+#fff3cd - off white
+#ffc38b - light peach
+#ff926b - peach
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
+
+.titletext{
+	text-align: center; 
+	color:#4d3e3e;
+	font-family: 'Kanit', Arial, sans-serif;
+}
+.box {
+	height: 175px;
+	width: 175px;
+	background-color:#4d3e3e;
+	display:inline-block;
+	margin:10px;
+	vertical-align:top;
+	text-align: center;
+	line-height: 175px;
+	font-size:100px;
+	color:#fff3cd;
+}
+#main {
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	height:595px;
+	width:595px;
+	background-color:#ffc38b;
+	padding: 10px;
+	
+}
+
+body {
+	background-color:#fff3cd;
+}
+
+#lightbox {
+	position:fixed;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,0.7); 
+}
+
+#x{
+	position:absolute;
+	top:0px;
+	right:0px;
+}
+
+.hidden {
+	display:none;
+}
+
+.unhidden{
+	display:block;
+}
+
+#positionMessage{
+	position:absolute;
+	top:45px;
+	left:0px;
+	width:100%;
+}
+
+#boundaryMessage{
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	width: 600px;
+	height:200px;
+	background-color:rgba(255,255,255,0.9);
+	z-index:1;
+	padding:30px;
+	border:thick solid #4d3e3e;
+}
