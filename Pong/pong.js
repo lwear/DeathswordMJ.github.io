@@ -101,6 +101,8 @@ window.setInterval(function show() {
 	positionOfPaddle1 += speedOfPaddle1;
 	positionOfPaddle2 += speedOfPaddle2;
 	topPositionOfBall += topSpeedOfBall;
+	leftPositionOfBall += leftSpeedOfBall;
+
 	
 	
 
@@ -135,6 +137,7 @@ window.setInterval(function show() {
 		}else{
 			
 		startBall();
+		
 	} // else
 	
 	}// if
