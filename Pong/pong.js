@@ -5,7 +5,7 @@ var speedOfPaddle2 = 0;
 var positionOfPaddle2 = document.getElementById("paddle2").offsetTop;
 
 const paddleHeight = document.getElementById("paddle1").offsetHeight;
-const paddleWidth = document.getElementById("paddle1").offsetHeight;
+const paddleWidth = document.getElementById("paddle1").offsetWidth;
 
 
 const gameboardHeight = document.getElementById("gameBoard").offsetHeight;
@@ -22,6 +22,11 @@ var topPositionOfBall = startTopPositionOfBall;
 var leftPositionOfBall = startLeftPositionOfBall;
 var topSpeedOfBall = 0;
 var leftSpeedOfBall = 0;
+
+
+var score1 = 0;
+var score2 = 0;
+
 
 function startBall() {
 	let direction = 1;
@@ -64,17 +69,19 @@ document.addEventListener('keyup', function(e) {
 		speedOfPaddle1 = 0;
 		
 	}
-	
+	if (e.keyCode == 83 || e.which == 83){ // S
+	speedOfPaddle1 = 0;	
+	}
 	
 });
 
 // moves right paddle
-document.addEventListener('keydown', function(r) {
+document.addEventListener('keydown', function(e) {
 	//console.log("key down" + e.keyCode);
-	if (r.keyCode == 38 || r.which == 38){ // Up arrow
+	if (e.keyCode == 38 || e.which == 38){ // Up arrow
 		speedOfPaddle2 = -10;
 	}
-	if (r.keyCode == 40 || r.which == 40){ // down arrow
+	if (e.keyCode == 40 || e.which == 40){ // down arrow
 	speedOfPaddle2 = 10;	
 	}
 	
@@ -85,10 +92,11 @@ document.addEventListener('keydown', function(r) {
 document.addEventListener('keyup', function(e) {
 	//console.log("key up" + e.keyCode);
 	if (e.keyCode == 38 || e.which == 38){ // Up arrow
-		speedOfPaddle2 = 0;
-		
+		speedOfPaddle2 = 0;	
 	}
-
+	if (e.keyCode == 40 || e.which == 40){ // down arrow
+	speedOfPaddle2 = 10;	
+	}
 	
 });
 
@@ -134,10 +142,11 @@ window.setInterval(function show() {
 		// if ball hits left paddle, change direction
 		if (topPositionOfBall > positionOfPaddle1 && topPositionOfBall < positionOfPaddle1 +paddleHeight){
 			leftSpeedOfBall *= -1; 
-		}else{
-			
-		startBall();
-		
+		}else{	
+			startBall();
+			score2 = score2 + 1;
+
+
 	} // else
 	
 	}// if
@@ -148,9 +157,11 @@ window.setInterval(function show() {
 		// if ball hits right paddle, change direction
 		if (topPositionOfBall > positionOfPaddle2 && topPositionOfBall < positionOfPaddle2 + paddleHeight){
 			leftSpeedOfBall *= -1; 
-		}else{
-			
+		}else{	
 		startBall();
+		score1 = score1 + 1;
+		
+
 	} // else
 	}
 
@@ -161,6 +172,10 @@ window.setInterval(function show() {
 	document.getElementById("paddle2").style.top = positionOfPaddle2 + "px";
 	document.getElementById("ball").style.top = topPositionOfBall + "px";
 	document.getElementById("ball").style.left = leftPositionOfBall + "px";
+	document.getElementById("score1").innerHTML = score1;
+	document.getElementById("score2").innerHTML = score2;
+	
+	
 
 
 }, 1000/60); // show
