@@ -1,8 +1,12 @@
 // global variables
 var speedOfPaddle1 = 0;
 var positionOfPaddle1 = document.getElementById("paddle1").offsetTop;
+const startPositionOfPaddle1 = positionOfPaddle1 = document.getElementById("paddle1").offsetTop;
+
+
 var speedOfPaddle2 = 0;
 var positionOfPaddle2 = document.getElementById("paddle2").offsetTop;
+const startPositionOfPaddle2 = document.getElementById("paddle2").offsetTop;
 
 const paddleHeight = document.getElementById("paddle1").offsetHeight;
 const paddleWidth = document.getElementById("paddle1").offsetWidth;
@@ -29,6 +33,9 @@ var score2 = 0;
 
 var buzzer = new sound("Buzzer.mp3");
 var bounce = new sound("Bounce.mp3");
+
+// used to control game start/stop
+var controlPlay;
 
 
 
@@ -134,7 +141,7 @@ function sound(src){
 
 
 // updates locations of paddles and ball
-window.setInterval(function show() {
+function show() {
 
 	const gameboardHeight = document.getElementById("gameBoard").offsetHeight;
 
@@ -215,7 +222,7 @@ window.setInterval(function show() {
 	
 
 
-}, 1000/60); // show
+}// show
 
 
 // resume game play
@@ -228,7 +235,7 @@ function resumeGame() {
 
 // pause game play
 function pauseGame() {
-  window.setInterval(controlPlay);
+  window.clearInterval(controlPlay);
   controlPlay = false;
 } // pauseGame
 
@@ -248,10 +255,11 @@ function startGame() {
 	  controlPlay = window.setInterval(show, 1000/60 );
 	}
 
-} // resumeGame
+} // startGame
+
 //stop game play
 function stopGame() {
-  window.setInterval(controlPlay);
+  window.clearInterval(controlPlay);
   controlPlay = false;
   
   // showLightBox with score
@@ -259,14 +267,14 @@ function stopGame() {
   let message2 = "Close to continue";
   
   if (score2 > score1){
-	  message1 = "Player 2 wins with" + score2 + " points!";
-	  message2 = "Player 1 had" + score1 + " points!";
+	  message1 = "Player 2 wins with " + score2 + " points!";
+	  message2 = "Player 1 had " + score1 + " points!";
 } else if (score1 > score2){
-	  message1 = "Player 1 wins with" + score1 + " points!";
-	  message2 = "Player 2 had" + score2 + " points!";
+	  message1 = "Player 1 wins with " + score1 + " points!";
+	  message2 = "Player 2 had " + score2 + " points!";
 } // else
 	
-	showLightBox(message1, message2)
+	showLightBox(message1, message2);
 
 
 
