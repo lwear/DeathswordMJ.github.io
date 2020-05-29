@@ -1,6 +1,6 @@
 body {
 	font-family:Verdana, sans-serif;
-	
+	background-image: url("https://i.pinimg.com/originals/3b/b6/99/3bb699a2620826ae77334703e5609d35.jpg");
 }
 
 
@@ -49,15 +49,14 @@ body {
 
 .paddle{
   width:10px;
-  height:150px;
   background-color:white;
-
 }
 
 #paddle1 {
   position:absolute;
   left:0px;
   top:460px;  
+  height:150px;
 
 }
 
@@ -65,6 +64,7 @@ body {
   position:absolute;
   right:0px;
   top:35vh;  
+  height:150px;
 
 }
 
