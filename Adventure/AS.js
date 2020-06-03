@@ -1,7 +1,7 @@
  const levels = [
 	// level 0
 		["flag", "rock","","","",
-		"fence", "rock","","","wings",
+		"fence", "rock","","","",
 		"", "tree","animate","animate","animate",
 		"", "water","","","",
 		"", "fence","","boyup",""],
@@ -44,7 +44,7 @@
 	  // load board
 	  for (i = 0; i < gridBoxes.length; i++){
 		gridBoxes[i].className = levelMap[i];
-		if (levelMap[i].includes("boy")) currentLocationOfBoy = i;
+		if (levelMap[i].includes("boyup")) currentLocationOfBoy = i;
 	  } // for
 	  
 	  animateBoxes = document.querySelectorAll(".animate");
@@ -64,16 +64,16 @@
 		  
 		  // update images
 		  if (direction == "right"){
-			 boxes[index].classList.add("KLright") 
+			 boxes[index].classList.add("lionright") 
 		  }else{
-			 boxes[index].classList.add("KLleft") 
+			 boxes[index].classList.add("lionleft") 
 		  }
 		  
 		  // remove images from other boxes 
 		  for (i = 0; i < boxes.length; i++){
 			 if (i != index){
-				boxes[index].classList.remove("KLleft") 
-				boxes[index].classList.remove("KLright") 
+				boxes[i].classList.remove("lionleft") 
+				boxes[i].classList.remove("lionright") 
 		  } // if
 	  } // for
 	  
@@ -90,8 +90,9 @@
 	
 	  // moving left
 	  }else{
-		 // turn around if hit left side
-		 if (index == boxes.length - 1){
+		
+		// turn around if hit left side
+		 if (index == 0){
 			 index++;
 			 direction = "right";
 		 }else{
