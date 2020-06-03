@@ -1,0 +1,96 @@
+body {
+	background-color: black;
+}
+
+#gameBoard {
+	border: 1px solid black;
+	display: grid;
+	grid-template-columns: 120px 120px 120px 120px 120px;
+	grid-template-rows: 120px 120px 120px 120px 120px;
+	justify-content:center;
+	width:600px;
+	height:600px;
+	
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#gameBoard div{
+  background-color:#00EE00;
+  background-repeat: no-repeat;
+  background-size:cover;
+	
+}
+
+.boyup {
+  background-image: url("images/boyup.png");
+}
+
+.boydown {
+  background-image: url("images/boydown.png");
+}
+
+.boyleft {
+  background-image: url("images/boyleft.png");
+}
+
+.boyright {
+  background-image: url("images/boyright.png");
+}
+
+.boyjump {
+  background-image: url("images/boyright.png");
+}
+
+.bush {
+  background-image: url("images/BushDark.png");
+}
+
+.bushlight {
+  background-image: url("images/Bush1.png");
+}
+
+.flag {
+  background-image: url("images/flag.png");
+}
+
+.lionup {
+  background-image: url("images/KLup.png");
+}
+
+.liondown {
+  background-image: url("images/KLdown.png");
+}
+
+.lionleft {
+  background-image: url("images/KLleft.png");
+}
+
+.lionright {
+  background-image: url("images/KLright.png");
+}
+
+.lionjump {
+  background-image: url("images/KLjump.png");
+}
+
+.water {
+  background-image: url("images/water.png");
+}
+
+.fencetop {
+  background-image: url("images/fence.png");
+}
+
+.fenceside {
+  background-image: url("images/fenceside.png");
+}
+
+.wings {
+  background-image: url("images/wings.png");
+}
+
+.rock {
+  background-image: url("images/rock.png");
+}
+
