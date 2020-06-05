@@ -79,11 +79,12 @@ body {
 }
 
 .fencetop {
-  background-image: url("images/fence.png");
+  background-image: url("images/fencetop.png");
 }
 
 .fenceside {
-  background-image: url("images/fenceside.png");
+  background-image: url("images/sidefence.png");
+
 }
 
 .wings {
@@ -94,3 +95,6 @@ body {
   background-image: url("images/rock.png");
 }
 
+.tree {
+  background-image: url("images/tree.png");
+}
