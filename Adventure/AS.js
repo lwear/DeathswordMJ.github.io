@@ -134,7 +134,7 @@
 			  nextLocation2 = nextLocation + 1;
 		  } else if (direction == "up"){
 			  nextClass = "boyjumpup";
-			  nextClass2 = "boywingsup";
+			  nextClass2 = "boywings";
 			  nextLocation2 = nextLocation - widthOfBoard;
      	  } else if (direction == "down"){
 			  nextClass = "boyjumpdown";
@@ -171,7 +171,7 @@
 
 
 	  // if there is are wings, add wings
-	  if (nextClass == "boywingsup"){
+	  if (nextClass == "boywings"){
 		  wingsOn = true;
 	  }
 	  
@@ -183,7 +183,7 @@
 	  } // else
 	  
 	  // build name of new class
-	  newClass = (wingsOn) ? "boywingsup" : "boyup";
+	  newClass = (wingsOn) ? "boywings" : "boy";
 	  newClass += direction;
 	  
 	  
