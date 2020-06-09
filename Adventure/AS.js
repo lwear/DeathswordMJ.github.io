@@ -134,7 +134,7 @@
 			  nextLocation2 = nextLocation + 1;
 		  } else if (direction == "up"){
 			  nextClass = "boyjumpup";
-			  nextClass2 = "boywings";
+			  nextClass2 = "boywingsup";
 			  nextLocation2 = nextLocation - widthOfBoard;
      	  } else if (direction == "down"){
 			  nextClass = "boyjumpdown";
@@ -154,7 +154,7 @@
 		   currentLocationOfBoy = nextLocation2;
 		   
 		   // get class of box after jump
-		   nextClass = grid[currentLocationOfBoy].className;
+		   nextClass = gridBoxes[currentLocationOfBoy].className;
 		   
 		   // show boy and wings after landing   
 		   gridBoxes[currentLocationOfBoy].className = nextClass2;
@@ -171,7 +171,7 @@
 
 
 	  // if there is are wings, add wings
-	  if (nextClass == "boywings"){
+	  if (nextClass == "wings"){
 		  wingsOn = true;
 	  }
 	  
