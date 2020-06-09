@@ -113,7 +113,7 @@
 	  if (noPassObstacles.includes(nextClass)){ return; }
 	  
 	  // if it's a fence, and there are are no wings, don't move
-	  if (!wingsOn && newClass.includes("fenceside") && nextClass.includes("fencetop")) { return; }
+	  if (!wingsOn && newClass.includes("fence")){ return; }
 	  
 	  //if there is a fence, move two spaces with animation
 	  if (nextClass.includes("fenceside")){
