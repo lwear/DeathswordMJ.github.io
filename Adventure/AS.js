@@ -8,16 +8,16 @@
 		
 	// level 1
 	
-		["flag", "rock","","","",
-		"fence", "rock","","","wings",
-		"", "tree","animate","animate","animate",
-		"", "water","","","",
-		"", "fence","","boyup","" ],
+		["flag", "water","rock","rock","rock",
+		"fenceside", "water","","tree","wings",
+		"", "bridge","","animate","",
+		"", "water","","animate","",
+		"bush", "water","tree","animate","boyup" ],
 		
 	// level 2
 	
 		["flag", "rock","","","",
-		"fence", "rock","","","wings",
+		"fencetop", "rock","","","wings",
 		"", "tree","animate","animate","animate",
 		"", "water","","","",
 		"", "fence","","boyup","" ]
