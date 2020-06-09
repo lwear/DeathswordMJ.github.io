@@ -60,7 +60,7 @@
 			 }
 			 break;
 		  
-		  case 40: // down arro
+		  case 40: // down arrow
 			 if (currentLocationOfBoy + widthOfBoard < widthOfBoard * widthOfBoard){
 				tryToMove("down");		
 			 }
@@ -113,10 +113,11 @@
 	  if (noPassObstacles.includes(nextClass)){ return; }
 	  
 	  // if it's a fence, and there are are no wings, don't move
-	  if (!wingsOn && newClass.includes("fence")){ return; }
+	  if (!wingsOn && nextClass.includes("fence")){ return; }
+	  
 	  
 	  //if there is a fence, move two spaces with animation
-	  if (nextClass.includes("fenceside")){
+	  if (nextClass.includes("fence")){
 		  
 		  // rider must be on to jump
 		  if (wingsOn){
@@ -183,7 +184,7 @@
 	  } // else
 	  
 	  // build name of new class
-	  newClass = (wingsOn) ? "boywings" : "boy";
+	  newClass = (wingsOn) ? "boywings" : "boyup";
 	  newClass += direction;
 	  
 	  
@@ -193,7 +194,7 @@
 	 
 	  }
 
-	  
+	  console.log("new class" + newClass)
 	  // move 1 spaces
 	  currentLocationOfBoy = nextLocation;
 	  gridBoxes[currentLocationOfBoy].className = newClass;
@@ -219,6 +220,7 @@ function levelUp(nextClass){
 		document.getElementById("levelup").style.display = "block";
 		clearTimeout(currentAnimation);
 		setTimeout(function(){
+			document.getElementById("levelup").style.display = "none";
 		currentLevel++;
 		loadLevel();
 		

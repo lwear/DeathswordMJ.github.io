@@ -71,6 +71,22 @@ body {
   background-image: url("images/boywingsleft.png");
 }
 
+.boyjumpleft {
+  background-image: url("images/boyjumpleft.png");
+}
+
+.boyjumpright {
+  background-image: url("images/boyjumpright.png");
+}
+
+.boyjumpup {
+  background-image: url("images/boyjumpup.png");
+}
+
+.boyjumpdown {
+  background-image: url("images/boyjumpdown.png");
+}
+
 .bush {
   background-image: url("images/BushDark.png");
 }
@@ -129,5 +145,5 @@ body {
 }
 
 .bridge {
-  background-image: url("images/bridge.png");
+  background-color:#800020 !important;
 }
