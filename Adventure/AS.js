@@ -17,7 +17,7 @@
 	// level 2
 	
 		["flag", "rock","","","",
-		"fencetop", "rock","","","wings",
+		"fenceside", "rock","","","wings",
 		"", "tree","animate","animate","animate",
 		"", "water","","","",
 		"", "fence","","boyup","" ]
@@ -60,7 +60,7 @@
 			 }
 			 break;
 		  
-		  case 40: // down arrow
+		  case 40: // down arro
 			 if (currentLocationOfBoy + widthOfBoard < widthOfBoard * widthOfBoard){
 				tryToMove("down");		
 			 }
@@ -113,8 +113,9 @@
 	  if (noPassObstacles.includes(nextClass)){ return; }
 	  
 	  // if it's a fence, and there are are no wings, don't move
-	  if (!wingsOn && nextClass.includes("fence")){ return; }
-	  
+    console.log("newClass " + newClass);
+	  if (!wingsOn && nextClass.includes("fence")) { return; }
+    console.log("this should not print");
 	  
 	  //if there is a fence, move two spaces with animation
 	  if (nextClass.includes("fence")){
@@ -184,7 +185,7 @@
 	  } // else
 	  
 	  // build name of new class
-	  newClass = (wingsOn) ? "boywings" : "boyup";
+	  newClass = (wingsOn) ? "boywings" : "boy";
 	  newClass += direction;
 	  
 	  
@@ -194,7 +195,7 @@
 	 
 	  }
 
-	  console.log("new class" + newClass)
+	  console.log("new class is " + newClass);
 	  // move 1 spaces
 	  currentLocationOfBoy = nextLocation;
 	  gridBoxes[currentLocationOfBoy].className = newClass;
@@ -220,7 +221,7 @@ function levelUp(nextClass){
 		document.getElementById("levelup").style.display = "block";
 		clearTimeout(currentAnimation);
 		setTimeout(function(){
-			document.getElementById("levelup").style.display = "none";
+		document.getElementById("levelup").style.display = "none";
 		currentLevel++;
 		loadLevel();
 		
