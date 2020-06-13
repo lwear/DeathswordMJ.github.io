@@ -46,8 +46,41 @@
 		
 	</div>
 	
+		<div id = "controlpanel">
+		<div onclick ="startGame()" id = "start" class= "controls">
+		Start Game</div>
+		<div onclick ="Instructions()" id = "Instructions" class= "controls">
+		Instructions</div>>
+		
+	</div>
+	
+	<div id = "controlpanel2">
+		
+		<div onclick ="resumeGame()" id = "resume" class= "controls">
+		Resume Game</div>
+		<div onclick ="pauseGame()" id = "pause" class= "controls">
+		Pause Game</div>
+	
+	</div>
+	
+	<div id = "header">
+	<h1 id = "title">Capture The Flag</h1>
+
+	</div>
+	
+	
 	<div class="message" id = "lose">You Lose</div>
 	<div class="message" id = "levelup">Next Level...</div>
+	
+	
+		<div id = "positionMessage">
+	   <div id = "boundaryMessage" class="hidden">
+	   <img id = "x" src="images/x.png" alt="close" onclick= "continueGame()">
+	   <h1 class= "titletext" id="message">Warning</h1>
+	   <p class= "titletext" id="message2"></p>
+	</div>
+	</div>
+	 
 	
 	<script src="AS.js"></script>
   </body>

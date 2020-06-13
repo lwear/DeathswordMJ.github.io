@@ -33,6 +33,7 @@
   var currentLocationOfBoy = 0;
   var currentAnimation; // alows 1 animation per level
   var widthOfBoard = 5;
+  var controlPlay;  // used to control game start/stop
   
   
   window.addEventListener("load",function (){
@@ -296,16 +297,120 @@ function levelUp(nextClass){
 		 }else{
 		  index--;
 		 } // else
-	  } // if
+	  } // if else
+		  
 	currentAnimation = setTimeout(function(){
 		animateEnemy(boxes, index, direction);
+		
+		// if enemy hits boy
+			if (boxes[index].className).includes("KL")){
+			document.getElementById("lose").style.display = "block";
+			return;
+
+			
+	
 	}, 750);
 	
 
-
-
-
-
-	  
 	  
   } // animateEnemy
+  
+  function Instructions(){
+
+  let message1 = "Welcome to My Game"
+  let message2 = "The goal is to reach the flag before dying from the lion. You need the wings to pass the big obstacles"
+
+ showLightBox(message1, message2);	
+  window.clearInterval(controlPlay);
+  controlPlay = false;
+
+
+} // Instructions
+
+// resume game play
+function resumeGame() {
+if (!controlPlay){
+ controlPlay = window.setInterval(tryToMove, 1000/60 );
+}
+} // resumeGame
+
+
+// pause game play
+function pauseGame() {
+  window.clearInterval(controlPlay);
+  controlPlay = false;
+} // pauseGame
+
+// start game play
+function startGame() {
+
+
+
+	loadlevel();
+
+
+
+
+if (!controlPlay){
+ controlPlay = window.setInterval(tryToMove, 1000/60 );
+}
+
+} // startGame
+
+//stop game play
+function stopGame() {
+  window.clearInterval(controlPlay);
+  controlPlay = false;
+ 
+  // showLightBox with score
+  let message1 = "You died!!!";
+  let message2 = "Press start to try again";
+  window.clearInterval(controlPlay);
+  controlPlay = false;
+ 
+
+showLightBox(message1, message2);
+
+
+
+} // stopGame
+
+  
+  
+  
+  /****** Light Box Code ******/
+
+function changeVisibility(divID){
+var element = document.getElementById(divID);
+
+
+//if element exists, toggle it's class
+// between hidden and unhidden
+if(element) {
+element.className = (element.className == 'hidden')? 'unhidden' : 'hidden';
+} // if
+} // changeVisability
+
+// display message in lightbox
+function showLightBox(message, message2){
+// set messages
+document.getElementById("message").innerHTML = message;
+document.getElementById("message2").innerHTML = message2;
+// show lightbox
+changeVisibility("lightbox");
+changeVisibility("boundaryMessage");
+}
+
+// close lightbox
+function continueGame(){
+
+  changeVisibility("lightbox");
+  changeVisibility("boundaryMessage");
+ 
+  // if the game is over, show controls
+changeVisibility("controls");
+
+
+}
+
+/****** End Light Box Code ******/
