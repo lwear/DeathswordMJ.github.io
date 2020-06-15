@@ -303,9 +303,10 @@ function levelUp(nextClass){
 		animateEnemy(boxes, index, direction);
 		
 		// if enemy hits boy
-			if (boxes[index].className).includes("KL")){
+		if (boxes[index].className.includes("KL")){
 			document.getElementById("lose").style.display = "block";
 			return;
+		}
 
 			
 	
